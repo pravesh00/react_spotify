@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as React from 'react';
 import { FlatList, StyleSheet, Text, TextInput, View,Button, TouchableOpacity,svg,path,Svg,Path } from 'react-native';
-import Jal from './Components/jal';
-import Svg from 'react-native-svg';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import HomeScreen from './Components/HomeScreen';
+
+const Stack= createStackNavigator();
 
 
 
@@ -10,30 +14,29 @@ import Svg from 'react-native-svg';
 
 export default function App() {
   return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+        name="Home"
+        component={HomeScreen}
+        options={{title:"Home"}}
+        >
+
+        </Stack.Screen>
+        <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+
+
+const ProfileScreen=({navigation})=>{
+  return(
     <View style={styles.container}>
-      <Text style={styles.brand}>Konnectify</Text>
-      <TextInput style={styles.textfield}></TextInput>
-      <TextInput style={styles.textfield} secureTextEntry={true}></TextInput>
-      <TouchableOpacity style={styles.btnstyle}><Text style={styles.btnText}>Submit</Text></TouchableOpacity>
-      <Svg height="50%" width="50%" viewBox="0 0 100 100">
-          <Circle
-            cx="50"
-            cy="50"
-            r="45"
-            stroke="blue"
-            strokeWidth="2.5"
-            fill="green"
-          />
-          <Rect
-            x="15"
-            y="15"
-            width="70"
-            height="70"
-            stroke="red"
-            strokeWidth="2"
-            fill="yellow"
-          />
-        </Svg>
+      <Text style={styles.brand}>Profile Page</Text>
     </View>
   );
 }
