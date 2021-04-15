@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     },
     brand:{
       fontSize:32,
-      fontFamily:'Sans-Serif',
       color:'#107EE4',
       fontStyle:'normal'
     },

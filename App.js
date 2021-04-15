@@ -5,10 +5,9 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './Components/HomeScreen';
+import ProfileScreen from './Components/ProfileScreen';
 
 const Stack= createStackNavigator();
-
-
 
 
 
@@ -33,13 +32,7 @@ export default function App() {
 }
 
 
-const ProfileScreen=({navigation})=>{
-  return(
-    <View style={styles.container}>
-      <Text style={styles.brand}>Profile Page</Text>
-    </View>
-  );
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -50,7 +43,6 @@ const styles = StyleSheet.create({
   },
   brand:{
     fontSize:32,
-    fontFamily:'Sans-Serif',
     color:'#107EE4',
     fontStyle:'normal'
   },
